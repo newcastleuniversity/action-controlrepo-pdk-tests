@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    runs-on: alpine-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Clone repository
       uses: actions/checkout@v3
