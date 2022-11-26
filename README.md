@@ -1,10 +1,10 @@
 # action-controlrepo-pdk-tests
 
-This action runs `pdk test unit` on your codebase and fails the step if there are test failures.
+This action runs `pdk validate` and `pdk test unit` on your codebase and fails the step if there are test failures.
 
 ## Usage
 
-To use the action add the following step to your workflow file (e.g. `.github/workflows/pdk-test-unit.yml`)
+To use the action add the following step to your workflow file (e.g. `.github/workflows/pdk-tests.yml`)
 
 ```yaml
 name: Run pdk on control repo
