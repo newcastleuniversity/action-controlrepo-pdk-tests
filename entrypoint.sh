@@ -24,11 +24,11 @@ echo ""
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
-(cd $SITE_MODULE_PATH/profiles ; pdk validate --parallel --format=text $additional_opts) || return 1
-(cd $SITE_MODULE_PATH/profiles ; pdk test unit --parallel --format=text $additional_opts) || return 1
+(cd $SITE_MODULE_PATH/profiles ; pdk validate --format=text $additional_opts) || return 1
+(cd $SITE_MODULE_PATH/profiles ; pdk test unit --format=text $additional_opts) || return 1
 echo ""
 echo "+----------------+"
 echo "| Test the roles |"
 echo "+----------------+"
-(cd $SITE_MODULE_PATH/roles ; pdk validate --parallel --format=text $additional_opts) || return 1
-(cd $SITE_MODULE_PATH/roles ; pdk test unit --parallel --format=text $additional_opts) || return 1
+(cd $SITE_MODULE_PATH/roles ; pdk validate --format=text $additional_opts) || return 1
+(cd $SITE_MODULE_PATH/roles ; pdk test unit --format=text $additional_opts) || return 1
