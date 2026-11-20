@@ -63,6 +63,10 @@ echo 'Test require "puppet"; puts Puppet.version'
   -I /opt/puppetlabs/pdk/private/puppet/ruby/2.7.0/gems/puppet-7.21.0/lib \
   -e 'require "puppet"; puts Puppet.version'
 
+echo ""
+echo "## gem list concurrent-ruby"  
+/opt/puppetlabs/pdk/private/ruby/2.7.7/bin/gem list concurrent-ruby
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
