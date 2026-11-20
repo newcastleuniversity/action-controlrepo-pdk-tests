@@ -57,6 +57,12 @@ find /opt/puppetlabs/pdk -name ruby -type f
 echo "\nFind puppet"
 find /opt/puppetlabs/pdk -name puppet -type f
 
+echo ""
+echo "require "puppet"; puts Puppet.version"
+/opt/puppetlabs/pdk/private/ruby/2.7.7/bin/ruby \
+  -I /opt/puppetlabs/pdk/private/puppet/ruby/2.7.0/gems/puppet-7.21.0/lib \
+  -e 'require "puppet"; puts Puppet.version'
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
