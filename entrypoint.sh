@@ -31,19 +31,30 @@ ruby --version
 echo "Puppet:"
 puppet --version
 
-echo "Copilot's suggested test thing:"
-/opt/puppetlabs/pdk/private/puppet/bin/ruby \
+echo "\nPuppet long path /opt/puppetlabs/pdk/private/puppet/ruby/2.7.0/bin/puppet --version:"
+/opt/puppetlabs/pdk/private/puppet/ruby/2.7.0/bin/puppet \
+  --version
+echo "\nRuby long path /opt/puppetlabs/pdk/private/ruby/2.7.7/bin/ruby require puppet gem:"
+/opt/puppetlabs/pdk/private/ruby/2.7.7/bin/ruby \
+  -e 'require "puppet"'
+
+echo "\nCopilot's suggested test thing:"
+/opt/puppetlabs/pdk/private/ruby/2.7.7/bin/ruby \
+  -ropenssl \
+  -e 'p OpenSSL::SSL::SSLContext::DEFAULT_PARAMS.frozen?'
+
+/opt/puppetlabs/pdk/private/ruby/2.7.7/bin/ruby \
   -ropenssl \
   -e 'p OpenSSL::SSL::SSLContext::DEFAULT_PARAMS'
 
-echo "Which PDK"  
+echo "\nWhich PDK"  
 which pdk
 
 head -20 "$(which pdk)"
 
-echo "Find ruby"
+echo "\nFind ruby"
 find /opt/puppetlabs/pdk -name ruby -type f
-echo "Find puppet"
+echo "\nFind puppet"
 find /opt/puppetlabs/pdk -name puppet -type f
 
 echo "+-------------------+"
