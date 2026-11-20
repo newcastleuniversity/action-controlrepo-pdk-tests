@@ -36,6 +36,16 @@ echo "Copilot's suggested test thing:"
   -ropenssl \
   -e 'p OpenSSL::SSL::SSLContext::DEFAULT_PARAMS'
 
+echo "Which PDK"  
+which pdk
+
+head -20 "$(which pdk)"
+
+echo "Find ruby"
+find /opt/puppetlabs/pdk -name ruby -type f
+echo "Find puppet"
+find /opt/puppetlabs/pdk -name puppet -type f
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
