@@ -1,4 +1,4 @@
-ARG PDKIMAGE=puppet/puppet-dev-tools:2024-11-15-d09e323
+ARG PDKIMAGE=puppet/puppet-dev-tools:4.33.0
 
 FROM $PDKIMAGE
 
