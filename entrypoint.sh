@@ -31,6 +31,11 @@ ruby --version
 echo "Puppet:"
 puppet --version
 
+echo "Copilot's suggested test thing:"
+/opt/puppetlabs/pdk/private/puppet/bin/ruby \
+  -ropenssl \
+  -e 'p OpenSSL::SSL::SSLContext::DEFAULT_PARAMS'
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
