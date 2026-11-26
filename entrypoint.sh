@@ -67,6 +67,17 @@ echo ""
 echo "## gem list concurrent-ruby"  
 /opt/puppetlabs/pdk/private/ruby/2.7.7/bin/gem list concurrent-ruby
 
+echo "=== HOME ==="
+ls -la /github/home
+
+echo "=== PDK ==="
+find /github/home/.pdk 2>/dev/null
+
+echo "-= Now deleting cached pdk and gems =-"
+
+rm -rf /github/home/.pdk
+rm -rf /github/home/.bundle
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
