@@ -1,0 +1,59 @@
+name: Action Smoke Test
+
+on:
+  - push
+  - pull_request
+    # Allows you to run this workflow manually from the Actions tab
+  - workflow_dispatch
+
+jobs:
+  smoke_22-04:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create test module
+        run: |
+          mkdir controlrepo
+          cd controlrepo
+
+          cat > Puppetfile <<EOF
+          EOF
+
+          mkdir -p site
+          cd site
+
+          pdk new module profiles --skip-interview
+          pdk new module site --skip-interview
+
+      - name: Test the action
+        uses: ./
+        with:
+          puppet-version: 7.23.0
+          site-module-path: site
+  smoke_24-04:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create test module
+        run: |
+          mkdir controlrepo
+          cd controlrepo
+
+          cat > Puppetfile <<EOF
+          EOF
+
+          mkdir -p site
+          cd site
+
+          pdk new module profiles --skip-interview
+          pdk new module site --skip-interview
+
+      - name: Test the action
+        uses: ./
+        with:
+          puppet-version: 7.23.0
+          site-module-path: site
