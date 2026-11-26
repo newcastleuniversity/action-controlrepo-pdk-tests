@@ -96,7 +96,7 @@ jobs:
           EOF
 
       - name: Test the action
-         uses: ./
-         with:
-           puppet-version: 7.23.0
-           site-module-path: controlrepo/site
+        uses: ./
+        with:
+          puppet-version: 7.23.0
+          site-module-path: controlrepo/site
