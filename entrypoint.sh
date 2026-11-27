@@ -89,6 +89,19 @@ echo "-= Now deleting cached pdk and gems =-"
 rm -rf /github/home/.pdk
 rm -rf /github/home/.bundle
 
+cd "$SITE_MODULE_PATH/profiles"
+
+echo "=== GEM ENV ==="
+bundle env || true
+
+echo "=== BUNDLE CHECK ==="
+bundle check || true
+
+echo "=== BUNDLE LIST PUPPET ==="
+bundle list | grep puppet || true
+
+cd "$SITE_MODULE_PATH"
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
