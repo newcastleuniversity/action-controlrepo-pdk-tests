@@ -1,5 +1,11 @@
 #! /usr/bin/env bash
 
+CONTROLREPO_ROOT="$(pwd)"
+SITE_ROOT="${CONTROLREPO_ROOT}/${SITE_MODULE_PATH}"
+
+echo "=== SITE_ROOT ==="
+echo $SITE_ROOT
+
 if [ -n "$PUPPET_VERSION" ]; then
   additional_opts="--puppet-version $PUPPET_VERSION"
 elif [ -n "$PE_VERSION" ]; then
@@ -73,7 +79,7 @@ ls -la /github/home
 echo "=== PDK ==="
 find /github/home/.pdk 2>/dev/null
 
-cd "$SITE_MODULE_PATH/profiles"
+cd "$SITE_ROOT/profiles"
 
 echo "=== BUNDLER ==="
 bundle check || true
@@ -89,7 +95,7 @@ echo "-= Now deleting cached pdk and gems =-"
 rm -rf /github/home/.pdk
 rm -rf /github/home/.bundle
 
-cd "$SITE_MODULE_PATH/profiles"
+cd "$SITE_ROOT/profiles"
 
 echo "=== GEM ENV ==="
 bundle env || true
@@ -100,16 +106,16 @@ bundle check || true
 echo "=== BUNDLE LIST PUPPET ==="
 bundle list | grep puppet || true
 
-cd "$SITE_MODULE_PATH"
+cd "$SITE_ROOT"
 
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"
-(cd $SITE_MODULE_PATH/profiles ; pdk validate --format=text $additional_opts) || exit 1
-(cd $SITE_MODULE_PATH/profiles ; pdk test unit --format=text $additional_opts) || exit 1
+(cd $SITE_ROOT/profiles ; pdk validate --format=text $additional_opts) || exit 1
+(cd $SITE_ROOT/profiles ; pdk test unit --format=text $additional_opts) || exit 1
 echo ""
 echo "+----------------+"
 echo "| Test the roles |"
 echo "+----------------+"
-(cd $SITE_MODULE_PATH/roles ; pdk validate --format=text $additional_opts) || exit 1
-(cd $SITE_MODULE_PATH/roles ; pdk test unit --format=text $additional_opts) || exit 1
+(cd $SITE_ROOT/roles ; pdk validate --format=text $additional_opts) || exit 1
+(cd $SITE_ROOT/roles ; pdk test unit --format=text $additional_opts) || exit 1
