@@ -73,6 +73,17 @@ ls -la /github/home
 echo "=== PDK ==="
 find /github/home/.pdk 2>/dev/null
 
+cd "$SITE_MODULE_PATH/profiles"
+
+echo "=== BUNDLER ==="
+bundle check || true
+
+echo "=== CONCURRENT RUBY ==="
+bundle exec ruby -e 'require "concurrent"; puts Concurrent::VERSION' || true
+
+echo "=== BUNDLE PUPPET ==="
+bundle exec ruby -e 'require "puppet"; puts Puppet.version' || true
+
 echo "-= Now deleting cached pdk and gems =-"
 
 rm -rf /github/home/.pdk
