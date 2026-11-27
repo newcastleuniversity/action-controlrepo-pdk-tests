@@ -13,46 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create test controlrepo
-        run: |
-          mkdir -p controlrepo/manifests
-          mkdir -p controlrepo/site/profiles/manifests
-          mkdir -p controlrepo/site/roles/manifests
-
-          cat > controlrepo/Puppetfile <<'EOF'
-          EOF
-
-          cat > controlrepo/manifests/site.pp <<'EOF'
-          notify { 'hello': }
-          EOF
-
-          cat > controlrepo/site/profiles/metadata.json <<'EOF'
-          {
-            "name": "threepistons-profiles",
-            "version": "0.1.0",
-            "author": "threepistons",
-            "license": "Apache-2.0",
-            "source": "",
-            "dependencies": []
-          }
-          EOF
-
-          cat > controlrepo/site/roles/metadata.json <<'EOF'
-          {
-            "name": "threepistons-roles",
-            "version": "0.1.0",
-            "author": "threepistons",
-            "license": "Apache-2.0",
-            "source": "",
-            "dependencies": []
-          }
-          EOF
-
       - name: Test the action
         uses: ./
         with:
           puppet-version: 7.23.0
-          site-module-path: controlrepo/site
+          site-module-path: selftest/controlrepo/site
 
   smoke_24-04:
     runs-on: ubuntu-24.04
@@ -60,43 +25,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Create test controlrepo
-        run: |
-          mkdir -p controlrepo/manifests
-          mkdir -p controlrepo/site/profiles/manifests
-          mkdir -p controlrepo/site/roles/manifests
-
-          cat > controlrepo/Puppetfile <<'EOF'
-          EOF
-
-          cat > controlrepo/manifests/site.pp <<'EOF'
-          notify { 'hello': }
-          EOF
-
-          cat > controlrepo/site/profiles/metadata.json <<'EOF'
-          {
-            "name": "threepistons-profiles",
-            "version": "0.1.0",
-            "author": "threepistons",
-            "license": "Apache-2.0",
-            "source": "",
-            "dependencies": []
-          }
-          EOF
-
-          cat > controlrepo/site/roles/metadata.json <<'EOF'
-          {
-            "name": "threepistons-roles",
-            "version": "0.1.0",
-            "author": "threepistons",
-            "license": "Apache-2.0",
-            "source": "",
-            "dependencies": []
-          }
-          EOF
-
       - name: Test the action
         uses: ./
         with:
           puppet-version: 7.23.0
-          site-module-path: controlrepo/site
+          site-module-path: selftest/controlrepo/site
