@@ -30,4 +30,6 @@ jobs:
           pe-version: # optional
           # A string indicating the path within your controlrepo that contains your profiles and roles modules.
           site-module-path: # optional
+          # PDK options, e.g. --debug
+          pdk_options: # optional
 ```

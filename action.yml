@@ -14,6 +14,9 @@ inputs:
   site-module-path:
     description: e.g. site_modules
     required: false
+  pdk_options:
+    description: additional command-line flags and options for both PDK commands
+    required: false
 branding:
   icon: check-square
   color: orange
@@ -25,3 +28,4 @@ runs:
     PE_VERSION: ${{ inputs.pe-version }}
     PDKIMAGE: ${{ inputs.pdk-image }}
     SITE_MODULE_PATH: ${{ inputs.site-module-path }}
+    PDK_OPTIONS:  ${{ inputs.pdk_options }}
