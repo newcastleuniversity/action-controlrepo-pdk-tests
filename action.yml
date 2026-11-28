@@ -6,7 +6,7 @@ inputs:
     description: A string indicating the Puppet version to validate against, such as "5.4.2" or "5.5".
     required: false
   pdk-image:
-    description: A string indicating the docker image to build from, such as "puppet/puppet-dev-tools:4.x" or "puppet/puppet-dev-tools:2022-11-14-8e11537".
+    description: A string indicating the docker image to build from, such as "puppet/pdk:3.0.0.0".
     required: false
   site-module-path:
     description: e.g. site_modules

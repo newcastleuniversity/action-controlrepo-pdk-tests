@@ -17,3 +17,15 @@ jobs:
         uses: ./
         with:
           site-module-path: selftest/controlrepo/site
+          puppet-version: 8
+  smoke-7:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Test the action
+        uses: ./
+        with:
+          site-module-path: selftest/controlrepo/site
+          puppet-version: 7.34.0
