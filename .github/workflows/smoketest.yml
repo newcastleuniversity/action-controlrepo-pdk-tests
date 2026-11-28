@@ -31,4 +31,4 @@ jobs:
         with:
           puppet-version: 7.23.0
           site-module-path: selftest/controlrepo/site
-          pdk_options: --debug
+          pdk_options:
