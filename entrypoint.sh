@@ -2,6 +2,9 @@
 
 SITE_ROOT="$(pwd)/$SITE_MODULE_PATH"
 
+if [[ -v PUPPET_VERSION ]] ; then
+  PDK_OPTIONS+=" --puppet_version=$PUPPET_VERSION"
+
 echo "+-------------------+"
 echo "| Test the profiles |"
 echo "+-------------------+"

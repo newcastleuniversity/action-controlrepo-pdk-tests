@@ -5,9 +5,6 @@ inputs:
   puppet-version:
     description: A string indicating the Puppet version to validate against, such as "5.4.2" or "5.5".
     required: false
-  pe-version:
-    description: A string indicating the PE version to validate against, such as "2017.3.5" or "2018.1".
-    required: false
   pdk-image:
     description: A string indicating the docker image to build from, such as "puppet/puppet-dev-tools:4.x" or "puppet/puppet-dev-tools:2022-11-14-8e11537".
     required: false
@@ -25,7 +22,6 @@ runs:
   image: Dockerfile
   env:
     PUPPET_VERSION: ${{ inputs.puppet-version }}
-    PE_VERSION: ${{ inputs.pe-version }}
     PDKIMAGE: ${{ inputs.pdk-image }}
     SITE_MODULE_PATH: ${{ inputs.site-module-path }}
     PDK_OPTIONS:  ${{ inputs.pdk_options }}
