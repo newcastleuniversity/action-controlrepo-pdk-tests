@@ -1,8 +1,11 @@
-ARG PDKIMAGE=puppet/puppet-dev-tools:4.33.0
+ARG PDKIMAGE=puppet/pdk:3.0.0.0
 
 FROM $PDKIMAGE
 
 ARG SITE_MODULE_PATH=site_modules
+
+RUN apt update
+RUN apt install build-essential
 
 RUN gem install puppetfile-resolver
 
