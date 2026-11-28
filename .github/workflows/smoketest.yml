@@ -28,4 +28,4 @@ jobs:
         uses: ./
         with:
           site-module-path: selftest/controlrepo/site
-          puppet-version: 7.34.0
+          puppet-version: 7
