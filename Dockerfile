@@ -7,8 +7,6 @@ ARG SITE_MODULE_PATH=site_modules
 RUN apt update
 RUN apt --assume-yes install build-essential
 
-RUN gem install puppetfile-resolver
-
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
