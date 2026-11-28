@@ -2,6 +2,8 @@
 
 SITE_ROOT="$(pwd)/$SITE_MODULE_PATH"
 
+echo $PUPPET_VERSION
+
 if [[ -v PUPPET_VERSION ]] ; then
   PDK_OPTIONS+=" --puppet-version=$PUPPET_VERSION"
 fi
