@@ -7,20 +7,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  smoke_22-04:
-    runs-on: ubuntu-22.04
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Test the action
-        uses: ./
-        with:
-          puppet-version: 7.23.0
-          site-module-path: selftest/controlrepo/site
-          pdk_options:
-
-  smoke_24-04:
+  smoke
     runs-on: ubuntu-24.04
 
     steps:
@@ -29,6 +16,4 @@ jobs:
       - name: Test the action
         uses: ./
         with:
-          puppet-version: 7.23.0
           site-module-path: selftest/controlrepo/site
-          pdk_options:
