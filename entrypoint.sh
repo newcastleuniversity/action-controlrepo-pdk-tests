@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 
-echo "-= The entry directory =-"
-pwd
+SITE_ROOT="$(pwd)/$SITE_MODULE_PATH"
 
 echo "+-------------------+"
 echo "| Test the profiles |"
