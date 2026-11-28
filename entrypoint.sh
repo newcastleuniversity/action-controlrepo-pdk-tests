@@ -3,7 +3,7 @@
 SITE_ROOT="$(pwd)/$SITE_MODULE_PATH"
 
 if [[ -v PUPPET_VERSION ]] ; then
-  PDK_OPTIONS+=" --puppet_version=$PUPPET_VERSION"
+  PDK_OPTIONS+=" --puppet-version=$PUPPET_VERSION"
 fi
 
 echo "+-------------------+"
