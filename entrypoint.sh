@@ -2,6 +2,7 @@
 
 SITE_ROOT="$(pwd)/$SITE_MODULE_PATH"
 
+echo "-= Puppet version =-"
 echo $PUPPET_VERSION
 
 if [[ -v PUPPET_VERSION ]] ; then
